@@ -12,6 +12,11 @@
 #include <gtk-layer-shell/gtk-layer-shell.h>
 #endif
 
+#include "toml.hpp"
+#include <iostream>
+
+// cli parser
+#include "cli/parser.hpp"
 
 void set_x11_dock_hint(GtkWidget *window) {
 #ifdef GDK_WINDOWING_X11
@@ -29,6 +34,11 @@ void set_x11_dock_hint(GtkWidget *window) {
 }
 
 int main(int argc, char *argv[]) {
+    cli::Args args = cli::parse(argc, argv);
+
+    std::cout << "Config file: " << args.config_path << "\n";
+    std::cout << "Verbose mode: " << (args.verbose ? "ON" : "OFF") << "\n";
+
     gtk_init(&argc, &argv);
 
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
