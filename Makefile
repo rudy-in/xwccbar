@@ -5,7 +5,7 @@ CXXFLAGS = -Wall -g -Iinclude $(shell $(PKG_CONFIG) --cflags $(PKG_FLAGS))
 LDFLAGS = $(shell $(PKG_CONFIG) --libs $(PKG_FLAGS)) -lX11
 
 SRC = src/main.cc
-OUT = mygtkapp
+OUT = xwccbar
 
 all: $(OUT)
 
