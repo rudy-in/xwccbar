@@ -27,8 +27,6 @@ int main(int argc, char *argv[]) {
 
     auto window_cfg = config::load_config(args.config_path);
 
-    std::cout << "Window position: " << window_cfg.position << "\n";
-
     // create window (gtk)
     create_gtk_window(&argc, &argv);
 

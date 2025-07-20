@@ -1,5 +1,5 @@
 #pragma once
-#include "cxxopts.hpp"
+#include "cxxopts/cxxopts.hpp"
 #include <string>
 #include <iostream>
 #include "version.hpp" // get the version
