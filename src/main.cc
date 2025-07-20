@@ -12,7 +12,6 @@
 #include <gtk-layer-shell/gtk-layer-shell.h>
 #endif
 
-#include "toml.hpp"
 #include <iostream>
 
 // cli parser
@@ -21,8 +20,14 @@
 // create window
 #include "window/creation.hpp"
 
+#include "config/loader.hpp"
+
 int main(int argc, char *argv[]) {
     cli::Args args = cli::parse(argc, argv);
+
+    auto window_cfg = config::load_config(args.config_path);
+
+    std::cout << "Window position: " << window_cfg.position << "\n";
 
     // create window (gtk)
     create_gtk_window(&argc, &argv);
