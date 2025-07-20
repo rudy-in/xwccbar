@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
     auto window_cfg = config::load_config(args.config_path);
 
     // create window (gtk)
-    create_gtk_window(&argc, &argv);
+    create_gtk_window(&argc, &argv, window_cfg);
 
     return 0;
 }
